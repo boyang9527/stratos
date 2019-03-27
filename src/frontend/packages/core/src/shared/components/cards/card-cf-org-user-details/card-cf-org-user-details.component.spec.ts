@@ -16,6 +16,7 @@ import { EntityMonitorFactory } from '../../../monitors/entity-monitor.factory.s
 import { PaginationMonitorFactory } from '../../../monitors/pagination-monitor.factory';
 import { CapitalizeFirstPipe } from '../../../pipes/capitalizeFirstLetter.pipe';
 import { BooleanIndicatorComponent } from '../../boolean-indicator/boolean-indicator.component';
+import { MetadataItemComponent } from '../../metadata-item/metadata-item.component';
 import { CardCfOrgUserDetailsComponent } from './card-cf-org-user-details.component';
 
 describe('CardCfOrgUserDetailsComponent', () => {
@@ -24,7 +25,13 @@ describe('CardCfOrgUserDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CardCfOrgUserDetailsComponent, ...MetadataCardTestComponents, CapitalizeFirstPipe, BooleanIndicatorComponent],
+      declarations: [
+        CardCfOrgUserDetailsComponent,
+        MetadataItemComponent,
+        MetadataCardTestComponents,
+        CapitalizeFirstPipe,
+        BooleanIndicatorComponent
+      ],
       imports: [...BaseTestModulesNoShared],
       providers: [
         CfUserService,
