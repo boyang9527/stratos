@@ -134,13 +134,13 @@ export class ApplicationTabsBaseComponent implements OnInit, OnDestroy {
       }),
       first()
     );
-    this.applicationService.waitForAppAutoscalerHealth$
-      .pipe(first())
-      .subscribe(entity => {
-        if (entity && entity.entity && entity.entity.entity && entity.entity.entity.uptime > 0) {
-          this.tabLinks.push({ link: 'auto-scaler', label: 'Autoscale' });
-        }
-      });
+    // this.applicationService.waitForAppAutoscalerHealth$
+    //   .pipe(first())
+    //   .subscribe(entity => {
+    //     if (entity && entity.entity && entity.entity.entity && entity.entity.entity.uptime > 0) {
+    //       this.tabLinks.push({ link: 'auto-scaler', label: 'Autoscale' });
+    //     }
+    //   });
 
     this.endpointsService.hasMetrics(applicationService.cfGuid).subscribe(hasMetrics => {
       if (hasMetrics) {
